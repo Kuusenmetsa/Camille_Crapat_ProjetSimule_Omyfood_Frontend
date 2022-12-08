@@ -1,0 +1,96 @@
+@keyframes spinner{
+    to{
+        visibility: hidden;
+        display: none;
+    }
+}
+@keyframes loader{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes loader--small{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+
+.spinner{
+    @include flex(row, center, center, nowrap);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    visibility: visible;
+    background-color: rgba(map-get($color-basic, gray), 0.95);
+    animation: spinner 0s 3s forwards;
+    .loader{
+        display: inline-block;
+        position: relative;
+    }
+    &__loader{
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+        border-radius: 50px;
+        &:after{
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            bottom: -5px;
+            right: -5px;
+            border : 5px solid transparent;
+            border-top : 5px solid $color-primary;
+            border-radius: 50px;
+            animation: loader 1s linear infinite;
+        }
+    }
+    &__loader--small{
+        width: 35px;
+        height: 35px;
+        border-radius: 35px;
+        margin: 7px;
+        &:after{
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            bottom: -5px;
+            right: -5px;
+            border : 5px solid transparent;
+            border-top : 5px solid $color-secondary;
+            border-radius: 35px;
+            animation: loader--small 1s linear infinite;
+        }
+    }
+
+}
+
+@keyframes heart{
+    from{
+        visibility: hidden;
+    }
+    to{
+        visibility: visible;
+    }
+}
+@keyframes advent{
+    from{
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to{
+        opacity : 1;
+        transform: translateY(0px);
+    }
+}

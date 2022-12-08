@@ -1,0 +1,26 @@
+.restaurant__heart{
+    &:hover > .heart--rempli{
+        visibility: visible;
+        transition-duration: 700ms;
+        color: transparent;
+    }
+}
+.restaurantsPage__heart{
+    &:hover > .heart--rempli{
+        cursor: pointer;
+        visibility: visible;
+        transition-duration: 700ms;
+        color: transparent;
+    }
+}
+.heart{
+    position: relative;
+    font-size: $font-size-heart;
+    &--rempli{
+        background: linear-gradient($color-primary, $color-secondary);
+        -webkit-background-clip: text;
+        visibility: hidden;
+        position: absolute;
+        font-size: $font-size-heart;
+    }
+}

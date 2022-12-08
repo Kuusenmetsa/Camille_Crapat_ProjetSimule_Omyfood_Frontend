@@ -1,0 +1,214 @@
+.app{
+    @include desktop-only{
+        @include flex(row, space-between, flex-start, nowrap);
+    }
+    @include tablet-only{
+        @include flex(row, space-between, flex-start, nowrap);
+    }
+}
+.headerApp{
+    @include desktop-only{
+        @include base(25%, auto, 0, 0);
+    }
+    @include tablet-only{
+        @include base(35%, auto, 0, 0);
+    }
+}
+.search{
+    @include flex(row, center, center, nowrap);
+    @include base(100%, 3.125em, 0, 0);
+    background-color: map-get($color-background, introduction);
+    box-shadow: inset 0px 3px 2px darken(map-get($color-background, introduction), 10%);
+    form{
+        @include flex(row, center, center, nowrap);
+        @include base(50%, 3.125em, auto, 0);
+        text-align: center;
+        @include tablet-only{
+            @include base(27%, 3.125em, auto, 0);
+        }
+        @include desktop-only{
+            @include base(15%, 3.125em, auto, 0);
+        }
+        label{
+            @include base (15%, auto, 0, 0);
+            line-height: 3.125em;
+            text-align: center;
+        }
+        input{
+            @include base (60%, auto, 0, 0);
+            background: none;
+            border: none;
+            font-size: $font-size-basic;
+            text-align: center;
+        }
+    }
+}
+.introduction{
+    @include base (100%, auto, 0, 1.875em);
+    background-color: map-get($color-background, section );
+    text-align: center;
+    p{
+        color: darken(map-get($color-basic, gray), 50%);
+    }
+}
+
+.gridInstructions{
+    @include base(100%, auto, 0, 3.75em 0 3.125em 0);
+    h2{
+        margin-left: 1.25em;
+    }
+    .instructions{
+        @include flex(column, space-between, center, nowrap);
+        @include base(auto, 15.625em, 1.875em 0 0 0, 0);
+        &__instruction{
+            @include flex(row, start, center, nowrap);
+            @include base (80%, 4.375em, 0 auto, 0);
+            background-color: map-get($color-background, section);
+            @include border(20px);
+            @include shadow(darken(map-get($color-background, section), 20%));
+            span{
+                position: relative;
+                left: -15px;
+                @include base (25px, 25px, 0, 0);
+                line-height: 25px;
+                background-color: $color-primary;
+                @include border(25px);
+                color: map-get($color-basic,white);
+                text-align: center;
+            }
+            &:hover{
+                background-color: map-get($color-background, instructions);
+                cursor: pointer;
+                
+                .instructions__instruction__list__ico{
+                    color: $color-primary;
+                }
+            }
+            &__list{
+                @include flex(row, start, center, nowrap);
+                @include base (auto, 4.375em, 0, 0);
+                @include weight(bold);
+                font-size: $font-size-basic;
+                &__ico{
+                    margin : auto 1.563em auto 0.313em;
+                    font-size: $font-size-icone;
+                    color: darken(map-get($color-basic,gray), 50%);
+                }
+                }
+        
+        }
+    }
+    
+}
+.gridRestaurant{
+    @include base(100%, auto, 0, 3.438em 0 3.125em 0);
+    background-color: map-get($map: $color-background, $key: section);
+    @include desktop-only{
+        @include base(75%, auto, 0, 3.438em 1.25em 3.125em 1.25em);
+    }
+    @include tablet-only{
+        @include base(65%, auto, 0, 3.438em 1.25em 3.125em 1.25em);
+    }
+    h2{
+        margin-left: 1.25em;
+        @include desktop-only{
+            margin-left: 0;
+        }
+    }
+    .restaurants{
+        height: 68.75em;
+        @include flex(column, space-between, center, nowrap);
+        @include desktop-only{
+            @include flex(row, space-between, center, wrap);
+            @include base(auto,37.5em, 0, 0);
+        }
+        @include tablet-only{
+            @include flex(row, space-between, center, wrap);
+            @include base(auto,37.5em, 0, 0);
+        }
+        
+        a{
+            text-decoration: none;
+        }
+    }
+    .restaurant{
+        @include base(90%, 15.625em, 1.25em auto 0 auto, 0);
+            @include desktop-only{
+                @include base(30%, 15.625em, 1.25em 0 0 0, 0);
+            }
+            @include tablet-only{
+                @include base(47%, 15.625em, 1.25em 0 0 0, 0);
+            }
+        @include border(15px);
+        @include shadow(darken(map-get($color-background, section), 20%));
+        background-color: map-get($map: $color-basic, $key: white);
+        overflow: hidden;
+        &__image{
+            position: relative;
+            top: 0;
+            left: 0;
+            @include base(100%, 10.938em, -1.875em 0 0 0, 0);
+            overflow: hidden;
+            &--news{
+                position: relative;
+                top: 0;
+                left: 0;
+                @include base(100%, 10.938em, 0, 0);
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+            img{
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+        figcaption{
+            @include flex (row, space-between, center, nowrap);
+            @include base(auto, 4.688em, auto, 0.625em);
+            a{
+                @include base(auto, 4.688em, auto 0, 0);
+                .restaurant__description{
+                    @include base (100%, 3.438em, 0, 0);
+                    color: map-get($color-basic, black);
+                    p{
+                        font-size: $font-size-basic;
+                        color: darken(map-get($color-basic, gray), 55%);
+                        margin: 0.313em 0 0 0;
+                    }
+                    h3{
+                        font-size: $font-size-title-figure;
+                    }
+                }
+            }
+            .restaurant__heart{
+                @include flex (row, center, center, nowrap);
+                position: relative;
+                @include base(10%, auto, 0, 0);
+            }
+        }
+        &:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        
+        &--news{
+            display: inline-block;
+            position: relative;
+            top: 5%;
+            left: 72%;
+            z-index: 2;
+            @include base(25%, 1.875em, 0, 0);
+            line-height: 1.875em;
+            background-color: $color-tertiary;
+            color: darken($color-tertiary, 40%);
+            @include weight(bold);
+            text-align: center;
+        }
+
+    }
+    
+    
+}

@@ -1,0 +1,40 @@
+@mixin smartphone-only {
+    @media screen and (min-width : map-get($breakpoint, small)) and (max-width: map-get($breakpoint, medium)){
+        @content;
+    }
+}
+@mixin tablet-only {
+    @media screen and (min-width : map-get($breakpoint, medium)) and (max-width: map-get($breakpoint, big)){
+        @content;
+    }
+}
+@mixin desktop-only {
+    @media screen and (min-width: map-get($breakpoint, big)){
+        @content;
+    }
+}
+@mixin flex ($direction, $justify-content, $align-items, $wrap){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-wrap: $wrap;
+}
+@mixin base ($width, $height, $margin, $padding){
+    width: $width;
+    height: $height;
+    margin: $margin;
+    padding: $padding;
+}
+@mixin border ($taille){
+    border-radius: $taille;
+}
+@mixin shadow ($color) {
+    box-shadow: 0px 6px 6px $color;
+}
+@mixin color-button ($color-primary, $color-secondary) {
+    background: linear-gradient(to right bottom, $color-secondary, $color-primary);
+}
+@mixin weight($weight : weight($weight)){
+    font-weight: $weight;
+}

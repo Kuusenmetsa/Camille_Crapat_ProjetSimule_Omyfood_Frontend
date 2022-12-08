@@ -1,0 +1,17 @@
+header{
+    @include flex (row, center, center, nowrap);
+}
+.header{
+    &__logo{
+        @include flex (row, center, center, nowrap);
+        @include base (50%, 3.937em, auto, 0);
+    }
+    &__arrow{
+        a{
+            color: map-get($color-basic, black);
+        }
+        position: absolute;
+        left: 15px;
+        font-size: $font-size-icone;
+    }
+}

@@ -1,0 +1,149 @@
+.restaurantImg{
+    @include base(100%, 15.625em, 0, 0);
+    overflow: hidden;
+    img{
+        width: 100%;
+        object-fit: contain;
+    }
+}
+.restaurantsPage{
+    position: relative;
+    border-radius: 35px 35px 0 0;
+    @include base(100%, auto, -2.188em 0 0 0, 2.188em 0.938em 2.188em 0.938em);
+    @include flex(column, space-between, center, nowrap);
+    background-color: map-get($color-background, section);
+    &__heading{
+        width: 100%;
+        @include flex(row, space-between, center, nowrap);
+        @include desktop-only{
+            @include flex(row, center, center, nowrap);
+        }
+        margin-bottom: 2.813em;
+        h4{
+            font-size: $font-size-heart;
+            margin: 0;
+            @include desktop-only{
+                margin-right: 1.563em;
+            }
+        }
+        p{
+            margin: 0;
+        }
+    }
+    &__heart{
+        @include flex (row, center, center, nowrap);
+        position: relative;
+        @include base(5%, auto, auto, 0);
+    }
+    
+}
+.restaurantCard{
+    
+    @include desktop-only{
+        @include flex(row, space-between, center, nowrap);
+    }
+    @include tablet-only{
+        @include flex(row, space-between, center, nowrap);
+    }
+    @include base(100%, auto, 0, 0);
+    &__menu{
+        @include base(100%, auto, 0, 0);
+        @include desktop-only{
+            @include base (31%, auto, 0, 0);
+        }
+        @include tablet-only{
+            @include base (31%, auto, 0, 0);
+        }
+    }
+    h2{
+        font-weight: map-get($font-weight, regular);
+        text-transform : uppercase;
+        font-size: 1.125em;
+        color: darken(map-get($color-background, section), 30%);
+    }
+    .menus{
+        @include base(100%, auto, 0 0 2.5em 0, 0);
+    }
+    .menu{
+        overflow: hidden;
+        cursor: pointer;
+        @include base(100%, 4.375em, 0.875em 0 0 0, 0.625em);
+        background-color: map-get($color-basic, white);
+        @include border(20px);
+        @include flex(row, space-between, center, nowrap);
+        &__price{
+            align-self: flex-end;
+            text-align: center;
+            @include base (10%, auto, 0, 0);
+            margin: 0 0.625em 0 0.625em;
+            font-weight: map-get($font-weight, bold);
+        }
+        &__information{
+            @include base (90%, auto, 0, 0);
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            &__title{
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            &__information{
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;}
+        }
+        &__checked{
+            @include base(30%, 4.375em, 0, 0);
+            position: relative;
+            left: 10px;
+            max-width: 0;
+            @include flex(row, center, center, nowrap);
+            background-color: $color-tertiary;
+            transition: all 0.5s linear;
+            &__ico{                
+                font-size: 1.5em;
+                color: map-get($color-basic, white);
+                transition: all 0.5s linear;
+            }
+        }
+        h3{
+            font-size: 1.150em;
+            margin: 0;
+        }
+        p{            
+            font-size: 1em;
+            margin: 0.375em 0 0 0;
+        }
+        &:hover{
+            .menu__checked{
+                max-width: 70px;
+                &__ico{
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        &--animation--1{
+            opacity: 0;
+            animation: advent 250ms linear both 0ms;
+        }
+        &--animation--2{
+            opacity: 0;
+            animation: advent 250ms linear both 200ms;
+        }
+        &--animation--3{
+            opacity: 0;
+            animation: advent 250ms linear both 400ms;
+        }
+    }
+    .border{
+        @include base (13%, 0.188em, 0.5em 0 0 0, 0);
+        @include desktop-only{
+            @include base (8%, 0.188em, 0.5em 0 0 0, 0);
+        }
+        width: 13%;
+        height: 0.188em;
+        background-color: $color-tertiary;
+    }
+    
+}

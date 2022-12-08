@@ -1,0 +1,46 @@
+/* Color Variable */
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-background: (
+    introduction:  #eaeaea,
+    section: #f6f6f6,
+    instructions:  #f5edff,
+    footer: #353535, 
+);
+$color-basic: (
+    black: #000,
+    white: #fff,
+    gray: #f6f6f6,
+);
+
+
+
+
+/* Definition of breakpoint */
+
+$breakpoint: (
+    small : 0px, 
+    medium : 900px, 
+    big : 1350px,
+);
+
+/* font-variable */
+
+
+$font-family-title: "Shrikhand";
+$font-family-text: "Roboto";
+$font-family-error: Arial, sans-serif;
+
+$font-size-title-section: 1.688em;
+$font-size-title-figure: 1.25em;
+$font-size-basic: 1em;
+$font-size-paragraphe : 1.125em;
+$font-size-heart: 1.375em;
+$font-size-icone: 1.25em;
+
+$font-weight : (
+    regular : 400,
+    bold : bold,
+);

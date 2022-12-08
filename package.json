@@ -1,0 +1,26 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Projet 3 - Dynamisez une page web avec des animations CSS",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss public/styles/styles.css -w --style compressed",
+    "prefix": "postcss ./public/styles/styles.css --use autoprefixer -d ./public/styles/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daigerlittle/CamilleCrapat_3_21082021.git"
+  },
+  "author": "Camille CRAPAT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daigerlittle/CamilleCrapat_3_21082021/issues"
+  },
+  "homepage": "https://github.com/daigerlittle/CamilleCrapat_3_21082021#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.17",
+    "postcss-cli": "^10.0.0",
+    "sass": "^1.55.0"
+  }
+}
